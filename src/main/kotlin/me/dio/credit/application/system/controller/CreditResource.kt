@@ -40,7 +40,7 @@ class CreditResource(
     @RequestParam(value = "customerId") customerId: Long,
     @PathVariable creditCode: UUID
   ): ResponseEntity<CreditView> {
-    val credit: Credit = this.creditService.findByCreditCode(customerId, creditCode)
+    val credit: Credit = this.creditService.findByCreditCodeAndCustomerId(customerId, creditCode)
     return ResponseEntity.status(HttpStatus.OK).body(CreditView(credit))
   }
 }

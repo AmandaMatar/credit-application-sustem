@@ -23,7 +23,8 @@ import java.util.*
 @ExtendWith(MockKExtension::class)
 class CustomerServiceTest {
     @MockK lateinit var customerRepository: CustomerRepository
-    @InjectMockKs lateinit var customerService: CustomerService
+
+    @InjectMockKs private lateinit var customerService: CustomerService
 
     @Test
     fun `should create customer`(){
